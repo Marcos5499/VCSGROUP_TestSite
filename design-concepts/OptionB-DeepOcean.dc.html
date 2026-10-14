@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>VCS Group — Option B, Deep Ocean</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#141E3C}
+a{color:#7CC6DA}a:hover{color:#FFFFFF}
+.b-root{--navy:#1D2A51;--deep:#141E3C;--teal:#3790AB;--aqua:#7CC6DA;--ribbon:#3A85B5;--glow:#1F6FD1;--silver:#A7A6A9;--soft:#C9D4E6;--cw:min(640px,84vw);font-family:Outfit,system-ui,sans-serif;color:#fff;background:var(--deep);overflow-x:clip}
+.b-wrap{max-width:1240px;margin:0 auto;padding:0 40px;box-sizing:border-box}
+/* nav */
+.b-nav{position:sticky;top:0;z-index:60;height:0}
+.b-nav-in{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:18px auto 0;max-width:1240px;padding:12px 16px 12px 24px;box-sizing:border-box;border-radius:20px;border:1px solid rgba(255,255,255,0);transition:background .4s}
+.b-nav-links{display:flex;gap:6px;flex-wrap:wrap}
+.b-nav-links a{color:#fff;text-decoration:none;font-size:15px;font-weight:500;padding:10px 14px;border-radius:999px;transition:background .3s}
+.b-nav-links a:hover{background:rgba(255,255,255,.12);color:#fff}
+.b-btn{position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:12px;font:500 16px/1 Outfit,sans-serif;padding:16px 26px;border-radius:999px;border:0;cursor:pointer;text-decoration:none;min-height:48px;box-sizing:border-box;transition:transform .2s cubic-bezier(.2,.8,.2,1),background .3s,color .3s,box-shadow .3s}
+.b-btn:active{transform:scale(.95)}
+.b-btn::before{content:"";position:absolute;left:50%;top:50%;width:12px;height:12px;border-radius:50%;background:rgba(255,255,255,.55);transform:translate(-50%,-50%) scale(0);opacity:0;transition:transform .6s,opacity .7s}
+.b-btn:active::before{transform:translate(-50%,-50%) scale(30);opacity:1;transition:0s}
+.b-btn-teal{background:var(--teal);color:#fff}
+.b-btn-teal:hover{background:#2F86A0;color:#fff;box-shadow:0 0 0 6px rgba(55,144,171,.25)}
+.b-btn-line{background:transparent;color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.6)}
+.b-btn-line:hover{color:var(--deep);background:#fff}
+.b-btn-white{background:#fff;color:var(--navy)}
+.b-btn-white:hover{color:var(--navy);box-shadow:0 0 0 6px rgba(255,255,255,.2)}
+.b-btn .b-circ{width:30px;height:30px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:rgba(255,255,255,.18);transition:transform .35s}
+.b-btn:hover .b-circ{transform:rotate(-45deg)}
+.b-menu-btn{display:inline-flex;align-items:center;gap:12px;background:#fff;color:var(--navy);border:0;border-radius:999px;padding:8px 8px 8px 20px;font:600 15px Outfit,sans-serif;cursor:pointer;min-height:48px;transition:transform .2s}
+.b-menu-btn:active{transform:scale(.94)}
+.b-burger{width:34px;height:34px;border-radius:50%;background:var(--navy);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px}
+.b-burger i{display:block;width:14px;height:2px;background:#fff;border-radius:2px}
+/* overlay menu */
+.b-overlay{position:fixed;inset:0;z-index:90;background:var(--deep);display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);animation:b-ov .7s cubic-bezier(.7,0,.2,1) both;overflow:auto}
+@keyframes b-ov{from{clip-path:circle(0% at calc(100% - 80px) 50px)}to{clip-path:circle(150% at calc(100% - 80px) 50px)}}
+.b-ov-link{display:flex;align-items:baseline;gap:18px;color:#fff;text-decoration:none;font-size:46px;font-weight:500;letter-spacing:-.02em;padding:6px 0;opacity:0;animation:b-ovl .6s cubic-bezier(.2,.8,.2,1) both}
+.b-ov-link small{font-size:14px;color:var(--aqua);font-weight:500}
+.b-ov-link:hover{color:var(--aqua)}
+@keyframes b-ovl{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
+.b-close{width:56px;height:56px;border-radius:50%;border:1.5px solid rgba(255,255,255,.4);background:transparent;color:#fff;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .3s,background .3s}
+.b-close:hover{transform:rotate(90deg);background:rgba(255,255,255,.1)}
+/* hero */
+.b-hero{position:relative;min-height:860px;height:100vh;max-height:1000px;overflow:hidden;display:flex;align-items:flex-end}
+.b-hero-img{position:absolute;inset:-4%;background-size:cover;background-position:center}
+.b-hero-img{background-image:url(/_blob/ea194ba87e08ead0a2650b47a891b905)}
+.b-panel-ict{background-image:linear-gradient(90deg,rgba(20,30,60,.92) 0%,rgba(20,30,60,.6) 45%,rgba(20,30,60,.15) 100%),url(/_blob/ea194ba87e08ead0a2650b47a891b905)!important;background-size:cover!important;background-position:center!important}
+/* stacking division panels */
+.b-stack{position:relative}
+.b-panel{position:sticky;top:0;min-height:760px;height:100vh;max-height:900px;overflow:hidden;display:flex;align-items:center;border-top:1px solid rgba(255,255,255,.08)}
+.b-panel-bg{position:absolute;inset:0}
+.b-panel-icon{position:absolute;right:-60px;bottom:-80px;width:620px;height:620px;opacity:.13;color:#fff}
+.b-chip{display:inline-flex;align-items:center;padding:8px 14px;border-radius:999px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);font-size:14px;color:#fff;backdrop-filter:blur(6px)}
+.b-photo-tag{display:inline-flex;gap:8px;align-items:center;font-size:13px;color:var(--soft);padding:8px 12px;border-radius:999px;border:1px dashed rgba(255,255,255,.35)}
+/* journey */
+.b-tl{position:relative;display:flex;flex-direction:column;gap:28px}
+.b-tl-line{position:absolute;left:50%;top:0;bottom:0;width:2px;background:#DCE6EE;transform:translateX(-1px)}
+.b-tl-fill{position:absolute;inset:0;background:linear-gradient(#3790AB,#1F6FD1);transform-origin:top}
+.b-tl-row{display:grid;grid-template-columns:minmax(0,1fr) 64px minmax(0,1fr);align-items:center}
+.b-tl-card{background:#fff;border-radius:22px;padding:24px 28px;box-shadow:0 20px 50px rgba(29,42,81,.1);display:flex;flex-direction:column;gap:6px;transition:transform .35s}
+.b-tl-card:hover{transform:translateY(-4px)}
+.b-tl-dot{justify-self:center;width:18px;height:18px;border-radius:50%;background:#fff;border:4px solid #3790AB;position:relative;z-index:1}
+/* values */
+.b-val{position:relative;padding:34px;border-radius:26px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);display:flex;flex-direction:column;gap:14px;overflow:hidden;transition:border-color .4s,transform .4s}
+.b-val::after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(55,144,171,.55),transparent 70%);right:-120px;top:-120px;opacity:0;transition:opacity .5s}
+.b-val:hover{border-color:rgba(124,198,218,.6);transform:translateY(-6px)}
+.b-val:hover::after{opacity:1}
+/* testimonials */
+.b-tst-stage{position:relative;overflow:hidden;padding:12px 0}
+.b-tst-track{position:relative;left:50%;display:flex;gap:28px;transition:transform .9s cubic-bezier(.2,.8,.2,1)}
+.b-tst{flex:0 0 var(--cw);box-sizing:border-box;margin:0;border-radius:30px;padding:44px;display:flex;flex-direction:column;gap:28px;background:#fff;color:var(--navy);transition:opacity .6s,transform .6s,filter .6s;opacity:.35;transform:scale(.9);filter:saturate(.4)}
+.b-tst.is-on{opacity:1;transform:none;filter:none}
+.b-tst-side{position:absolute;top:0;bottom:0;width:calc((100% - var(--cw)) / 2);background:transparent;border:0;cursor:pointer;z-index:2}
+.b-tst-side:focus-visible{outline:2px solid #23748E;outline-offset:-6px}
+.b-round{width:56px;height:56px;border-radius:50%;border:1.5px solid #C5D1DD;background:#fff;color:var(--navy);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .2s,background .3s,color .3s}
+.b-round:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+.b-round:active{transform:scale(.9)}
+.b-foot a{color:var(--soft);text-decoration:none}
+.b-foot a:hover{color:#fff}
+/* scroll-driven motion */
+@supports (animation-timeline: view()){
+ .b-nav-in{animation:b-navbg linear both;animation-timeline:scroll(root);animation-range:0 400px}
+ .b-hero-img{animation:b-heroz linear both;animation-timeline:scroll(root);animation-range:0 1000px}
+ .b-hero-copy{animation:b-herocopy linear both;animation-timeline:scroll(root);animation-range:0 700px}
+ .b-ribbon-a{animation:b-riba linear both;animation-timeline:scroll(root);animation-range:0 1100px}
+ .b-ribbon-b{animation:b-ribb linear both;animation-timeline:scroll(root);animation-range:0 1100px}
+ .rv{animation:b-rv linear both;animation-timeline:view();animation-range:entry 0% cover 30%}
+ .rv-l{animation:b-rvl linear both;animation-timeline:view();animation-range:entry 0% cover 32%}
+ .rv-r{animation:b-rvr linear both;animation-timeline:view();animation-range:entry 0% cover 32%}
+ .rv-clip{animation:b-clip linear both;animation-timeline:view();animation-range:entry 0% cover 45%}
+ .px-up{animation:b-pxup linear both;animation-timeline:view();animation-range:cover}
+ .px-rot{animation:b-pxrot linear both;animation-timeline:view();animation-range:cover}
+ .b-panel-inner{animation:b-pin linear both;animation-timeline:view();animation-range:entry 10% contain 20%}
+ .b-panel-icon{animation:b-picon linear both;animation-timeline:view();animation-range:entry 0% exit 100%}
+ .b-tl-fill{animation:b-line linear both;animation-timeline:view();animation-range:cover 0% cover 70%}
+ .b-word{animation:b-word linear both;animation-timeline:view();animation-range:entry 20% cover 45%}
+}
+@keyframes b-navbg{to{background:rgba(20,30,60,.78);border-color:rgba(255,255,255,.12);backdrop-filter:blur(18px);box-shadow:0 18px 50px rgba(0,0,0,.25)}}
+@keyframes b-heroz{to{transform:scale(1.22) translateY(80px);filter:brightness(.6)}}
+@keyframes b-herocopy{to{transform:translateY(-140px);opacity:0}}
+@keyframes b-riba{from{transform:translate(-8%,6%)}to{transform:translate(6%,-26%) rotate(-4deg)}}
+@keyframes b-ribb{from{transform:translate(-4%,4%)}to{transform:translate(10%,-20%) rotate(-6deg)}}
+@keyframes b-rv{from{opacity:0;transform:translateY(64px)}to{opacity:1;transform:none}}
+@keyframes b-rvl{from{opacity:0;transform:translateX(-90px)}to{opacity:1;transform:none}}
+@keyframes b-rvr{from{opacity:0;transform:translateX(90px)}to{opacity:1;transform:none}}
+@keyframes b-clip{from{clip-path:inset(18% 22% 18% 22% round 40px)}to{clip-path:inset(0 0 0 0 round 0)}}
+@keyframes b-pxup{from{transform:translateY(140px)}to{transform:translateY(-140px)}}
+@keyframes b-pxrot{from{transform:rotate(-25deg) scale(.8)}to{transform:rotate(35deg) scale(1.15)}}
+@keyframes b-pin{from{opacity:0;transform:translateY(90px)}to{opacity:1;transform:none}}
+@keyframes b-picon{from{transform:translateY(120px) rotate(-12deg)}to{transform:translateY(-120px) rotate(10deg)}}
+@keyframes b-line{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+@keyframes b-word{from{opacity:.15}to{opacity:1}}
+@media (prefers-reduced-motion:reduce){.b-root *{animation:none!important}}
+@media (max-width:900px){
+ .b-nav-links{display:none}
+ .b-two{grid-template-columns:minmax(0,1fr)!important}
+ .b-g3{grid-template-columns:minmax(0,1fr)!important}
+ .b-g4{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ .b-h1{font-size:54px!important}
+ .b-h2{font-size:40px!important}
+ .b-overlay{grid-template-columns:minmax(0,1fr)}
+ .b-tl-line{left:20px}
+ .b-tl-row{grid-template-columns:40px minmax(0,1fr)}
+ .b-tl-row > .b-tl-spacer{display:none}
+ .b-tl-row > .b-tl-dot{grid-row:1;grid-column:1}
+ .b-tl-row > .b-tl-card{grid-column:2}
+ .b-panel{position:relative;height:auto;padding:96px 0}
+}
+</style>
+</helmet>
+<div class="b-root">
+
+<!-- ============ NAV (transparent → glass) ============ -->
+<header class="b-nav">
+  <nav class="b-nav-in" aria-label="Main">
+    <a href="#b-top" style="display: flex"><img src="/_blob/f47d72a4649d35c25b8d08e185d1c476" alt="VCS Group Seychelles — home" style="height: 42px; width: auto"></a>
+    <div class="b-nav-links">
+      <a href="#b-about">Who we are</a>
+      <a href="#b-divisions">Our businesses</a>
+      <a href="#b-journey">Heritage</a>
+      <a href="#b-values">Values</a>
+      <a href="#b-contact">Contact</a>
+    </div>
+    <button class="b-menu-btn" type="button" onClick="{{openMenu}}" aria-label="Open full menu">Menu <span class="b-burger" aria-hidden="true"><i></i><i></i></span></button>
+  </nav>
+</header>
+
+<!-- ============ OVERLAY MENU ============ -->
+<sc-if value="{{menuOpen}}" hint-placeholder-val="{{ false }}">
+  <div class="b-overlay" role="dialog" aria-modal="true" aria-label="Site menu">
+    <div style="padding: 48px 64px; display: flex; flex-direction: column; gap: 12px; justify-content: center">
+      <span style="font-size: 14px; letter-spacing: .2em; color: #7CC6DA; margin-bottom: 18px">OUR BUSINESSES</span>
+      <sc-for list="{{menuLinks}}" as="m" hint-placeholder-count="7">
+        <a class="b-ov-link" href="#b-divisions" onClick="{{closeMenu}}" style="animation-delay: {{m.delay}}"><small>{{m.num}}</small>{{m.name}}</a>
+      </sc-for>
+    </div>
+    <div style="position: relative; overflow: hidden; background: linear-gradient(160deg,#1D2A51,#23748E); padding: 48px 56px; display: flex; flex-direction: column; justify-content: space-between; gap: 32px">
+      <svg viewBox="0 0 600 800" preserveAspectRatio="none" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; opacity: .5"><path d="M0 700 C 200 640 420 460 600 200 L600 290 C 430 520 230 690 0 760 Z" fill="#3A85B5"></path><path d="M0 760 C 230 690 430 520 600 290 L600 350 C 440 570 240 740 0 800 Z" fill="#F2F2F0"></path></svg>
+      <div style="position: relative; display: flex; justify-content: flex-end"><button class="b-close" type="button" onClick="{{closeMenu}}" aria-label="Close menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></button></div>
+      <div style="position: relative; display: flex; flex-direction: column; gap: 14px; font-size: 18px">
+        <a href="#b-about" onClick="{{closeMenu}}" style="color: #fff; text-decoration: none">Who we are</a>
+        <a href="#b-journey" onClick="{{closeMenu}}" style="color: #fff; text-decoration: none">Our heritage</a>
+        <a href="#b-values" onClick="{{closeMenu}}" style="color: #fff; text-decoration: none">Values &amp; culture</a>
+        <a href="#b-contact" onClick="{{closeMenu}}" style="color: #fff; text-decoration: none">Careers</a>
+        <a href="#b-contact" onClick="{{closeMenu}}" style="color: #fff; text-decoration: none">Contact</a>
+      </div>
+      <div style="position: relative; font-size: 15px; line-height: 1.8; color: #C9D4E6">VCS Building, Le Chantier, Victoria, Mahé<br>+248 4676 000 · info@vcs.sc</div>
+    </div>
+  </div>
+</sc-if>
+
+<!-- ============ HERO ============ -->
+<section id="b-top" class="b-hero">
+  <div class="b-hero-img" role="img" aria-label="Abstract network of connected light points, from the VCS Group profile cover"></div>
+  <div style="position: absolute; inset: 0; background: linear-gradient(180deg,rgba(20,30,60,.55) 0%,rgba(20,30,60,.2) 40%,rgba(20,30,60,.9) 100%)"></div>
+  <svg viewBox="0 0 1440 900" preserveAspectRatio="none" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%">
+    <path class="b-ribbon-a" d="M-100 900 C 400 820 900 640 1540 260 L1540 400 C 980 700 480 860 -100 960 Z" fill="#3A85B5" opacity=".92"></path>
+    <path class="b-ribbon-b" d="M-100 960 C 480 860 980 700 1540 400 L1540 470 C 1000 760 520 900 -100 1000 Z" fill="#F2F2F0"></path>
+  </svg>
+  <div class="b-wrap b-hero-copy" style="position: relative; width: 100%; padding-bottom: 210px; display: flex; flex-direction: column; gap: 28px">
+    <span class="b-chip" style="align-self: flex-start">Seychelles · since 1991</span>
+    <h1 class="b-h1" style="margin: 0; font-size: 96px; line-height: .98; font-weight: 500; letter-spacing: -0.04em; max-width: 1000px">Shaping the Seychelles <span style="color: #7CC6DA">of tomorrow.</span></h1>
+    <div style="display: flex; gap: 40px; align-items: center; flex-wrap: wrap">
+      <p style="margin: 0; font-size: 20px; line-height: 1.6; color: #D5DEEC; max-width: 520px; font-weight: 300">Technology, mobility, travel, media and trade: twelve companies, one group, a foundational pillar of the nation’s growth.</p>
+      <a class="b-btn b-btn-teal" href="#b-divisions">Discover our businesses <span class="b-circ"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
+    </div>
+  </div>
+  <div style="position: absolute; left: 50%; bottom: 28px; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 8px; color: #1D2A51; font-size: 12px; letter-spacing: .2em; font-weight: 600">SCROLL<svg width="16" height="24" viewBox="0 0 16 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="1" y="1" width="14" height="22" rx="7"></rect><path d="M8 6v5"></path></svg></div>
+</section>
+
+<!-- ============ INTRO (light) ============ -->
+<section id="b-about" style="position: relative; background: #F2F2F0; color: #1D2A51; padding: 120px 0 140px; overflow: hidden">
+  <svg class="px-rot" width="420" height="420" viewBox="0 0 200 200" aria-hidden="true" style="position: absolute; right: -120px; top: 60px; opacity: .5"><circle cx="100" cy="100" r="80" fill="none" stroke="#3790AB" stroke-width="2" stroke-dasharray="6 10"></circle><circle cx="100" cy="100" r="56" fill="none" stroke="#3A85B5" stroke-width="18" stroke-dasharray="150 210" stroke-linecap="round"></circle></svg>
+  <div class="b-wrap" style="position: relative; display: flex; flex-direction: column; gap: 72px">
+    <div class="b-two" style="display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 40px">
+      <span class="rv" style="font-size: 14px; letter-spacing: .2em; font-weight: 600; color: #23748E; padding-top: 14px">WHO WE ARE</span>
+      <p style="margin: 0; font-size: 44px; line-height: 1.25; font-weight: 400; letter-spacing: -0.02em">
+        <span class="b-word">What began on 2 December 1991 as Seychelles’ first computer services company </span><span class="b-word">has grown into one of the country’s most respected groups: </span><span class="b-word" style="color: #23748E">empowering organisations to focus on their core activities </span><span class="b-word">through advanced technology, superior products and professional service.</span>
+      </p>
+    </div>
+    <div class="b-g4" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; border-top: 1px solid #C5CED9">
+      <div class="rv" style="padding: 32px 24px 0 0; display: flex; flex-direction: column; gap: 8px"><strong style="font-size: 72px; line-height: 1; font-weight: 500; letter-spacing: -0.04em">30+</strong><span style="font-size: 16px; color: #4A5A75">years of pioneering</span></div>
+      <div class="rv" style="padding: 32px 24px 0; border-left: 1px solid #C5CED9; display: flex; flex-direction: column; gap: 8px"><strong style="font-size: 72px; line-height: 1; font-weight: 500; letter-spacing: -0.04em">~300</strong><span style="font-size: 16px; color: #4A5A75">talented people</span></div>
+      <div class="rv" style="padding: 32px 24px 0; border-left: 1px solid #C5CED9; display: flex; flex-direction: column; gap: 8px"><strong style="font-size: 72px; line-height: 1; font-weight: 500; letter-spacing: -0.04em">12</strong><span style="font-size: 16px; color: #4A5A75">group companies</span></div>
+      <div class="rv" style="padding: 32px 0 0 24px; border-left: 1px solid #C5CED9; display: flex; flex-direction: column; gap: 8px"><strong style="font-size: 72px; line-height: 1; font-weight: 500; letter-spacing: -0.04em">8</strong><span style="font-size: 16px; color: #4A5A75">economic sectors</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DIVISIONS — stacking overlay panels ============ -->
+<section id="b-divisions" class="b-stack" aria-label="Our businesses">
+  <sc-for list="{{divisions}}" as="d" hint-placeholder-count="7">
+    <article class="b-panel">
+      <div class="b-panel-bg {{d.bgCls}}" style="background: {{d.bg}}"></div>
+      <svg class="b-panel-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width=".6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{{d.icon}}"></path></svg>
+      <div class="b-wrap b-two b-panel-inner" style="position: relative; width: 100%; display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 64px; align-items: center">
+        <div style="display: flex; flex-direction: column; gap: 24px">
+          <div style="display: flex; align-items: center; gap: 16px"><span style="font-size: 15px; font-weight: 600; color: #7CC6DA; letter-spacing: .14em">{{d.num}} / 07</span><span style="height: 1px; width: 80px; background: rgba(255,255,255,.4)"></span><span style="font-size: 15px; color: #C9D4E6">{{d.tag}}</span></div>
+          <h2 class="b-h2" style="margin: 0; font-size: 76px; line-height: 1; font-weight: 500; letter-spacing: -0.04em">{{d.name}}</h2>
+          <p style="margin: 0; font-size: 20px; line-height: 1.6; color: #D5DEEC; font-weight: 300; max-width: 560px">{{d.desc}}</p>
+          <div style="display: flex; gap: 12px; flex-wrap: wrap; align-items: center">
+            <a class="b-btn b-btn-white" href="#b-contact">Explore {{d.short}} <span class="b-circ" style="background: #1D2A51; color: #fff"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
+            <span class="b-photo-tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h3l2-3h6l2 3h3v13H4z"></path><circle cx="12" cy="13" r="4"></circle></svg>Background photo: {{d.photo}}</span>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 12px">
+          <span style="font-size: 13px; letter-spacing: .2em; color: #C9D4E6; font-weight: 600">COMPANIES</span>
+          <sc-for list="{{d.companies}}" as="c" hint-placeholder-count="3">
+            <div style="display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 20px 24px; border-radius: 18px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.16); backdrop-filter: blur(10px)">
+              <div style="display: flex; flex-direction: column; gap: 4px"><strong style="font-size: 20px; font-weight: 500">{{c.n}}</strong><span style="font-size: 15px; color: #C9D4E6">{{c.d}}</span></div>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7CC6DA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </article>
+  </sc-for>
+</section>
+
+<!-- ============ JOURNEY (light) ============ -->
+<section id="b-journey" style="position: relative; z-index: 2; background: #F5F8FA; color: #1D2A51; padding: 140px 0 120px; border-radius: 48px 48px 0 0; margin-top: -48px">
+  <div class="b-wrap" style="display: flex; flex-direction: column; gap: 72px">
+    <div class="rv" style="text-align: center; display: flex; flex-direction: column; gap: 18px; align-items: center">
+      <span style="font-size: 14px; letter-spacing: .2em; font-weight: 600; color: #23748E">OUR HERITAGE</span>
+      <h2 class="b-h2" style="margin: 0; font-size: 68px; line-height: 1.04; font-weight: 500; letter-spacing: -0.04em; max-width: 900px">Building a legacy of success</h2>
+      <p style="margin: 0; font-size: 19px; color: #4A5A75; max-width: 640px; line-height: 1.6">Milestones that helped build our legacy and shape our country.</p>
+    </div>
+    <div class="b-tl">
+      <div class="b-tl-line" aria-hidden="true"><div class="b-tl-fill"></div></div>
+      <sc-for list="{{milestones}}" as="m" hint-placeholder-count="10">
+        <div class="b-tl-row">
+          <sc-if value="{{m.left}}" hint-placeholder-val="{{ true }}">
+            <div class="b-tl-card rv-l"><strong style="font-size: 36px; font-weight: 600; color: #3790AB; letter-spacing: -0.02em">{{m.y}}</strong><span style="font-size: 18px; line-height: 1.5">{{m.t}}</span></div>
+            <span class="b-tl-dot"></span>
+            <span class="b-tl-spacer"></span>
+          </sc-if>
+          <sc-if value="{{m.right}}" hint-placeholder-val="{{ false }}">
+            <span class="b-tl-spacer"></span>
+            <span class="b-tl-dot"></span>
+            <div class="b-tl-card rv-r"><strong style="font-size: 36px; font-weight: 600; color: #3790AB; letter-spacing: -0.02em">{{m.y}}</strong><span style="font-size: 18px; line-height: 1.5">{{m.t}}</span></div>
+          </sc-if>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VALUES (dark) ============ -->
+<section id="b-values" style="position: relative; overflow: hidden; background: #1D2A51; padding: 140px 0">
+  <svg class="px-up" viewBox="0 0 1440 600" preserveAspectRatio="none" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; opacity: .14"><path d="M0 600 C 500 520 950 300 1440 0" fill="none" stroke="#7CC6DA" stroke-width="2"></path><path d="M0 560 C 520 480 980 260 1440 -40" fill="none" stroke="#7CC6DA" stroke-width="1"></path><path d="M0 640 C 480 560 920 340 1440 40" fill="none" stroke="#7CC6DA" stroke-width="1"></path></svg>
+  <div class="b-wrap" style="position: relative; display: flex; flex-direction: column; gap: 64px">
+    <div class="b-two" style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 40px; align-items: end">
+      <h2 class="b-h2 rv-l" style="margin: 0; font-size: 68px; line-height: 1.04; font-weight: 500; letter-spacing: -0.04em">Values that drive a high-performance culture</h2>
+      <p class="rv-r" style="margin: 0; font-size: 19px; line-height: 1.7; color: #C9D4E6; font-weight: 300">Our values guide our relationships with customers, partners and each other. They make the VCS Group a rewarding place to work, and a partner our customers want to stay with.</p>
+    </div>
+    <div class="b-g3" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px">
+      <sc-for list="{{values}}" as="v" hint-placeholder-count="6">
+        <div class="b-val rv">
+          <div style="display: flex; justify-content: space-between; align-items: center"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#7CC6DA" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{{v.icon}}"></path></svg><span style="font-size: 14px; color: #8C9AB3">{{v.num}}</span></div>
+          <h3 style="margin: 0; font-size: 30px; font-weight: 500">{{v.n}}</h3>
+          <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #C9D4E6; font-weight: 300">{{v.d}}</p>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS (light) ============ -->
+<section aria-label="What our clients say" style="background: #EEF2F6; color: #1D2A51; padding: 130px 0">
+  <div class="b-wrap rv" style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 24px; margin-bottom: 40px">
+    <div style="display: flex; flex-direction: column; gap: 14px"><span style="font-size: 14px; letter-spacing: .2em; font-weight: 600; color: #23748E">VOICES</span><h2 class="b-h2" style="margin: 0; font-size: 68px; line-height: 1.04; font-weight: 500; letter-spacing: -0.04em">Trusted by Seychelles</h2></div>
+    <div style="display: flex; gap: 12px; align-items: center">
+      <span style="font-size: 18px; color: #4A5A75; margin-right: 8px">{{tLabel}}</span>
+      <button class="b-round" type="button" onClick="{{prev}}" aria-label="Previous testimonial"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg></button>
+      <button class="b-round" type="button" onClick="{{next}}" aria-label="Next testimonial"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+    </div>
+  </div>
+  <div class="b-tst-stage">
+    <button class="b-tst-side" type="button" style="left: 0" onClick="{{prev}}" aria-label="Show previous testimonial"></button>
+    <button class="b-tst-side" type="button" style="right: 0" onClick="{{next}}" aria-label="Show next testimonial"></button>
+    <div class="b-tst-track" style="transform: translateX(calc(-1 * ({{tIdx}} * (var(--cw) + 28px) + var(--cw) / 2)))">
+      <sc-for list="{{testimonials}}" as="t" hint-placeholder-count="5">
+        <figure class="b-tst {{t.cls}}">
+          <span style="font-size: 13px; letter-spacing: .18em; font-weight: 600; color: #23748E">{{t.div}}</span>
+          <blockquote style="margin: 0; font-size: 26px; line-height: 1.45; font-weight: 400">{{t.q}}</blockquote>
+          <figcaption style="display: flex; align-items: center; gap: 14px; padding-top: 22px; border-top: 1px solid #DCE6EE"><span style="width: 52px; height: 52px; border-radius: 50%; background: #1D2A51; color: #7CC6DA; display: flex; align-items: center; justify-content: center; font-weight: 600">{{t.i}}</span><span style="display: flex; flex-direction: column"><strong style="font-size: 17px; font-weight: 600">{{t.n}}</strong><span style="font-size: 15px; color: #4A5A75">{{t.r}}</span></span></figcaption>
+        </figure>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA + FOOTER ============ -->
+<footer id="b-contact" class="b-foot" style="position: relative; overflow: hidden; background: #141E3C; padding: 140px 0 40px">
+  <svg viewBox="0 0 1440 500" preserveAspectRatio="none" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100%; height: 500px"><path class="b-ribbon-a" d="M-100 120 C 400 60 900 160 1540 20 L1540 90 C 960 230 420 130 -100 190 Z" fill="#3A85B5" opacity=".55"></path></svg>
+  <div class="b-wrap" style="position: relative; display: flex; flex-direction: column; gap: 96px">
+    <div class="rv-clip" style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 28px; padding: 80px 32px; border-radius: 40px; background: linear-gradient(140deg,#23748E,#1D2A51 70%)">
+      <h2 class="b-h2" style="margin: 0; font-size: 72px; line-height: 1.02; font-weight: 500; letter-spacing: -0.04em; max-width: 860px">Let’s write the next chapter together.</h2>
+      <p style="margin: 0; font-size: 19px; color: #D5DEEC; font-weight: 300; max-width: 560px; line-height: 1.6">Partner with us, join our team, or talk to one of our twelve companies.</p>
+      <div style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: center">
+        <a class="b-btn b-btn-white" href="mailto:info@vcs.sc">Contact the Group <span class="b-circ" style="background: #1D2A51; color: #fff"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
+        <a class="b-btn b-btn-line" href="#b-contact">Careers at VCS</a>
+      </div>
+    </div>
+    <div class="b-g4" style="display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 40px">
+      <div style="display: flex; flex-direction: column; gap: 18px"><img src="/_blob/f47d72a4649d35c25b8d08e185d1c476" alt="VCS Group Seychelles" style="height: 50px; width: auto; align-self: flex-start"><p style="margin: 0; font-size: 16px; line-height: 1.7; color: #C9D4E6; font-weight: 300">VCS Building, Le Chantier<br>PO Box 1000, Victoria, Mahé, Seychelles<br>+248 4676 000 · <a href="mailto:info@vcs.sc">info@vcs.sc</a></p></div>
+      <div style="display: flex; flex-direction: column; gap: 12px; font-size: 16px"><strong style="font-size: 13px; letter-spacing: .2em; color: #7CC6DA; font-weight: 600">BUSINESSES</strong><a href="#b-divisions">ICT</a><a href="#b-divisions">Automobile</a><a href="#b-divisions">Import &amp; Distribution</a><a href="#b-divisions">Tourism</a><a href="#b-divisions">Printing &amp; Media</a><a href="#b-divisions">Investment</a></div>
+      <div style="display: flex; flex-direction: column; gap: 12px; font-size: 16px"><strong style="font-size: 13px; letter-spacing: .2em; color: #7CC6DA; font-weight: 600">AUTOMOBILE</strong><span style="color: #C9D4E6">Autoland: +248 4389 444</span><a href="mailto:info@autoland.sc">info@autoland.sc</a><strong style="font-size: 13px; letter-spacing: .2em; color: #7CC6DA; font-weight: 600; margin-top: 10px">PRINTING</strong><span style="color: #C9D4E6">Printhouse: +248 4374 888</span><a href="mailto:info@printhouse.sc">info@printhouse.sc</a></div>
+      <div style="display: flex; flex-direction: column; gap: 12px; font-size: 16px"><strong style="font-size: 13px; letter-spacing: .2em; color: #7CC6DA; font-weight: 600">TOURISM</strong><span style="color: #C9D4E6">SeaShell Travel: +248 4324 361</span><a href="#b-contact">seashelltravel.sc</a><span style="color: #C9D4E6">Executive Cars: +248 2526 162</span><a href="#b-contact">executivecars.sc</a></div>
+    </div>
+    <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.12); font-size: 14px; color: #8C9AB3"><span>© 2026 VCS Group, Seychelles</span><span>Caring · Innovation · Loyalty · Knowledge · Integrity · Commitment</span></div>
+  </div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":8200}}'>
+var ICONS = {
+  ict: 'M4 5h16v11H4z M9 20h6 M12 16v4',
+  auto: 'M3 13l2-5h14l2 5v4H3z M7 17v2 M17 17v2 M7 13.5h.01 M17 13.5h.01',
+  imp: 'M3 7l9-4 9 4v10l-9 4-9-4z M3 7l9 4 9-4 M12 11v10',
+  tour: 'M12 3a9 9 0 100 18 9 9 0 000-18z M3 12h18 M12 3c3 3.5 3 14.5 0 18 M12 3c-3 3.5-3 14.5 0 18',
+  print: 'M6 9V3h12v6 M6 18H4v-7h16v7h-2 M6 14h12v7H6z',
+  media: 'M12 12h.01 M8.5 8.5a5 5 0 000 7 M15.5 8.5a5 5 0 010 7 M5.5 5.5a9 9 0 000 13 M18.5 5.5a9 9 0 010 13',
+  inv: 'M3 20h18 M5 16l5-5 4 3 6-7 M15 7h5v5'
+};
+var DIVS = [
+  { name: 'ICT', short: 'VCS', tag: 'Since 1991', icon: ICONS.ict, bgCls: 'b-panel-ict', bg: '#141E3C', photo: 'VCS Building, Le Chantier',
+    desc: 'The flagship of the Group. Victoria Computer Services delivers enterprise infrastructure, software, SCloud backup and IT support to banks, hotels, airlines, schools, ministries and small businesses.',
+    companies: [{ n: 'Victoria Computer Services', d: 'Microsoft · HP · Xerox · Cisco · Fortinet · Dell' }, { n: 'SCloud', d: 'Backup & disaster recovery' }] },
+  { name: 'Automobile', short: 'Autoland', tag: 'Six world brands', icon: ICONS.auto, bgCls: '', bg: 'radial-gradient(circle at 80% 30%,rgba(124,198,218,.35),transparent 50%),linear-gradient(120deg,#141E3C 10%,#1F3F73 60%,#3A85B5)', photo: 'Autoland Complex, Providence',
+    desc: 'Authorised sales and after-sales for Honda, BMW, Chevrolet, Isuzu, Peugeot, GWM and HAVAL, with factory-trained technicians and computer-based diagnostics.',
+    companies: [{ n: 'Autoland', d: 'Service centre, garage & spare parts' }, { n: 'Honda (Seychelles)', d: 'Cars, motorcycles & power products' }, { n: 'Executive Motors', d: 'BMW · Chevrolet · Isuzu' }, { n: 'Crown Motors', d: 'GWM · Peugeot · HAVAL' }] },
+  { name: 'Import & Distribution', short: 'Savy & Sons', tag: 'Roots in the 1930s', icon: ICONS.imp, bgCls: '', bg: 'radial-gradient(circle at 20% 80%,rgba(55,144,171,.45),transparent 55%),linear-gradient(140deg,#1D2A51,#172447 50%,#23748E)', photo: 'Savy & Sons cellar',
+    desc: 'The leading wine, spirits and beverage wholesaler in Seychelles, supplying hotels, restaurants, bars and shops across Mahé, Praslin and La Digue.',
+    companies: [{ n: 'Savy & Sons', d: 'B&G · Bacardi · Diageo · Laurent-Perrier · Bavaria · Bardinet' }] },
+  { name: 'Tourism', short: 'SeaShell Travel', tag: 'Land, air & sea', icon: ICONS.tour, bgCls: '', bg: 'radial-gradient(circle at 70% 70%,rgba(124,198,218,.5),transparent 55%),linear-gradient(170deg,#141E3C,#1E5E86 60%,#3790AB)', photo: 'Island Star off Mahé',
+    desc: 'IATA-accredited ticketing for every airline serving Seychelles, chauffeur-driven and self-drive BMW and Honda fleets, and sport fishing aboard the 58-foot Viking “Island Star”.',
+    companies: [{ n: 'SeaShell Travel', d: 'IATA-accredited travel agency' }, { n: 'Executive Cars Rental', d: 'Limousine, transfers, rentals & leasing' }, { n: 'Island Charters', d: 'Sport fishing & coastal cruising' }] },
+  { name: 'Printing & Publishing', short: 'Printhouse', tag: '1,700 m² facility', icon: ICONS.print, bgCls: '', bg: 'radial-gradient(circle at 85% 20%,rgba(58,133,181,.5),transparent 50%),linear-gradient(120deg,#141E3C,#253463 60%,#1D2A51)', photo: 'Heidelberg press, Printhouse',
+    desc: 'The largest privately owned printing firm in Seychelles, with Heidelberg offset, Xerox and Mimaki digital presses, chemical-free CTP, and secure MICR cheque printing for the Central Bank.',
+    companies: [{ n: 'Printhouse', d: 'Offset, digital & security printing' }, { n: 'iMedia', d: 'Seychelles Directory & yellowpages.sc' }] },
+  { name: 'Media & Marketing', short: 'Switch', tag: 'Firsts in Seychelles', icon: ICONS.media, bgCls: '', bg: 'radial-gradient(circle at 25% 25%,rgba(31,111,209,.55),transparent 50%),linear-gradient(150deg,#141E3C,#1D2A51 50%,#2B5C9E)', photo: 'Pure 90.7 FM studio',
+    desc: 'A full-service digital and brand agency, the country’s first independent daily colour newspaper, and its first commercial private radio station, broadcasting 24/7.',
+    companies: [{ n: 'Switch', d: 'Web, digital marketing & branding' }, { n: 'TODAY in Seychelles', d: 'eTODAY · SEALIFE · OZORDI Dimans' }, { n: 'Pure 90.7 FM', d: 'Music, news & sport, 24/7' }] },
+  { name: 'Investment', short: 'investments', tag: 'National cornerstones', icon: ICONS.inv, bgCls: '', bg: 'radial-gradient(circle at 75% 75%,rgba(167,166,169,.35),transparent 55%),linear-gradient(140deg,#141E3C,#1D2A51)', photo: 'Victoria, Mahé',
+    desc: 'Shareholders’ strategic stakes in enterprises at the heart of the Seychelles economy, in insurance, banking, telecoms, brewing and development.',
+    companies: [{ n: 'H. Savy Insurance · H. Savy & Co.', d: 'Insurance & trading' }, { n: 'Seychelles Commercial Bank', d: 'Banking' }, { n: 'Cable & Wireless · Seychelles Breweries', d: 'Telecoms & beverages' }, { n: 'Le Chantier Development · Land Marine', d: 'Property & marine' }] }
+];
+var MILES = [
+  { y: '1991', t: 'Marc Houareau founds Victoria Computer Services, the first computer services company in Seychelles' },
+  { y: '2001', t: 'Honda (Seychelles) is acquired by the Group' },
+  { y: '2004', t: 'Executive Motors introduces BMW; SeaShell Travel begins operations' },
+  { y: '2005', t: 'Switch, a full-service marketing agency, is founded' },
+  { y: '2007', t: 'Savy & Sons is founded, carrying forward Harry Savy & Company' },
+  { y: '2009', t: 'Crown Motors brings the first GWM cars to Seychelles' },
+  { y: '2010', t: 'Printhouse is established at Providence Industrial Estate' },
+  { y: '2011', t: 'TODAY in Seychelles, the first independent daily colour newspaper' },
+  { y: '2012', t: 'Pure 90.7 FM goes on air, the first commercial private radio station' },
+  { y: '2023', t: 'Crown Motors launches HAVAL, and BMW electric vehicles arrive' }
+];
+var VALUES = [
+  { n: 'Caring', icon: 'M12 21s-7-4.5-9.5-9A5.5 5.5 0 0112 6a5.5 5.5 0 019.5 6c-2.5 4.5-9.5 9-9.5 9z', d: 'Maintaining respectful relations with customers, partners, suppliers, employees and communities.' },
+  { n: 'Innovation', icon: 'M9 18h6 M10 21h4 M12 3a6 6 0 00-4 10.5c.7.7 1 1.5 1 2.5h6c0-1 .3-1.8 1-2.5A6 6 0 0012 3z', d: 'Making changes that create differences and improvements throughout all divisions.' },
+  { n: 'Loyalty', icon: 'M7 11l3-3 4 4 3-3 4 4-6 6-3-3-2 2-6-6z', d: 'Working collaboratively with employees, partners, suppliers and customers to solve problems.' },
+  { n: 'Knowledge', icon: 'M2 6l10-4 10 4-10 4z M6 8v6c0 1.5 3 3 6 3s6-1.5 6-3V8', d: 'Being experts in our fields.' },
+  { n: 'Integrity', icon: 'M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z M9 12l2 2 4-4', d: 'Exhibiting honesty and integrity at all times.' },
+  { n: 'Commitment', icon: 'M12 2l3 6.5 7 .8-5.2 4.8 1.5 7L12 17.5 5.7 21l1.5-7L2 9.3l7-.8z', d: 'Dedicated to the success of our customers, partners, employees and shareholders.' }
+];
+var TESTS = [
+  { div: 'ICT DIVISION', q: '[Placeholder] A quote from a banking or hotel client about VCS’s IT expertise and dependable support.', n: '[Client name]', r: '[Title], [Organisation]', i: 'IC' },
+  { div: 'AUTOMOBILE', q: '[Placeholder] A quote about the Autoland service experience and factory-trained technicians.', n: '[Client name]', r: '[Title], [Company]', i: 'AU' },
+  { div: 'TOURISM', q: '[Placeholder] A quote from a visitor about Executive Cars or a day aboard Island Star.', n: '[Client name]', r: '[Country]', i: 'TO' },
+  { div: 'IMPORT & DISTRIBUTION', q: '[Placeholder] A quote from a resort partner about Savy & Sons’ portfolio and reliability.', n: '[Client name]', r: '[Title], [Resort]', i: 'SS' },
+  { div: 'PRINTING', q: '[Placeholder] A quote about Printhouse’s quality and fast turnaround.', n: '[Client name]', r: '[Title], [Organisation]', i: 'PH' }
+];
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { menu: false, t: 0 }; }
+  renderVals() {
+    var self = this, t = this.state.t, n = TESTS.length;
+    return {
+      menuOpen: this.state.menu,
+      openMenu: function () { self.setState({ menu: true }); },
+      closeMenu: function () { self.setState({ menu: false }); },
+      menuLinks: DIVS.map(function (d, i) { return { name: d.name, num: '0' + (i + 1), delay: (0.25 + i * 0.06) + 's' }; }),
+      divisions: DIVS.map(function (d, i) { return Object.assign({}, d, { num: '0' + (i + 1) }); }),
+      milestones: MILES.map(function (m, i) { return Object.assign({}, m, { left: i % 2 === 0, right: i % 2 === 1 }); }),
+      values: VALUES.map(function (v, i) { return Object.assign({}, v, { num: '0' + (i + 1) }); }),
+      tIdx: t,
+      tLabel: (t + 1) + ' / ' + n,
+      testimonials: TESTS.map(function (x, i) { return Object.assign({}, x, { cls: i === t ? 'is-on' : '' }); }),
+      prev: function () { self.setState({ t: (self.state.t - 1 + n) % n }); },
+      next: function () { self.setState({ t: (self.state.t + 1) % n }); }
+    };
+  }
+}
+</script>
+</body>
+</html>

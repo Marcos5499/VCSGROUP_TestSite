@@ -1,0 +1,18 @@
+{
+  "v": 3,
+  "createdOnFiles": {"v": 1, "at": "2026-10-14T11:10:00Z"},
+  "title": "VCS Group Website Concepts",
+  "launch": {"view": "canvas"},
+  "pages": [],
+  "boards": {
+    "Main.dc.html": {"x": 0, "y": 0, "w": 1100, "h": 1460, "title": "Brief, brand palette & how to review"},
+    "OptionA-LagoonLight.dc.html": {"x": 1180, "y": 0, "w": 1440, "h": 7400, "title": "Option A — Lagoon Light (clean, Calendly-inspired)", "expand": "fill", "is_interactive": true},
+    "OptionB-DeepOcean.dc.html": {"x": 2700, "y": 0, "w": 1440, "h": 8200, "title": "Option B — Deep Ocean (immersive, ER Group-inspired)", "expand": "fill", "is_interactive": true},
+    "OptionC-HeritageHorizon.dc.html": {"x": 4220, "y": 0, "w": 1440, "h": 7600, "title": "Option C — Heritage & Horizon (editorial hybrid)", "expand": "fill", "is_interactive": true}
+  },
+  "order": ["Main.dc.html", "OptionA-LagoonLight.dc.html", "OptionB-DeepOcean.dc.html", "OptionC-HeritageHorizon.dc.html"],
+  "notes": {
+    "heading": {"x": 0, "y": -320, "text": "VCS Group — three website directions for the Executive Chairman", "kind": "title1", "maxW": 5660}
+  },
+  "designSystems": []
+}
