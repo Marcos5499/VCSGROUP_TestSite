@@ -1,0 +1,175 @@
+<title>VCS Group Website Concepts D–F</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* A review window: concepts and their pages on the left, the live site framed at a chosen device width. */
+:root {
+  color-scheme: dark;
+  --chrome: #12192F;     /* tool chrome */
+  --panel: #182141;      /* sidebar */
+  --canvas: #0D1326;     /* the board behind the frame */
+  --line: #26305A;       /* separation by tone */
+  --fg: #EEF2F7;
+  --fg-muted: #A9B4CB;
+  --accent: #3790AB;     /* VCS teal */
+  --accent-strong: #5FBCD3;
+  --font: 'Archivo', system-ui, sans-serif;
+}
+html, body { height: 100%; }
+body { margin: 0; background: var(--canvas); color: var(--fg); font-family: var(--font); font-size: 14px; overflow: hidden; }
+button { font: inherit; color: inherit; }
+.app { height: 100%; display: grid; grid-template-columns: 300px minmax(0, 1fr); grid-template-rows: 52px minmax(0, 1fr); }
+.top { grid-column: 1 / -1; display: flex; align-items: center; gap: 16px; background: var(--chrome); padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.top-name { font-weight: 600; font-size: 15px; white-space: nowrap; }
+.top-name span { color: var(--fg-muted); font-weight: 400; }
+.devices { margin-left: auto; display: flex; background: var(--panel); padding: 3px; gap: 2px; }
+.devices button { border: 0; background: transparent; padding: 7px 12px; cursor: pointer; color: var(--fg-muted); transition: background-color 160ms ease, color 160ms ease, transform 120ms ease-out; }
+.devices button:active { transform: scale(0.96); }
+.devices button[aria-pressed="true"] { background: var(--accent); color: #fff; }
+.toggle { border: 0; background: var(--panel); padding: 9px 12px; cursor: pointer; transition: transform 120ms ease-out; }
+.toggle:active { transform: scale(0.96); }
+.zoom { color: var(--fg-muted); font-variant-numeric: tabular-nums; min-width: 44px; text-align: right; }
+.side { background: var(--panel); overflow-y: auto; padding: 16px 0 24px; padding-left: max(0px, env(safe-area-inset-left, 0px)); }
+.concept { padding: 10px 16px 16px; }
+.concept + .concept { margin-top: 6px; background: transparent; }
+.concept-btn { all: unset; box-sizing: border-box; display: block; width: 100%; padding: 12px; cursor: pointer; transition: background-color 160ms ease; }
+.concept-btn:focus-visible, .page-btn:focus-visible, .devices button:focus-visible, .toggle:focus-visible { outline: 2px solid var(--accent-strong); outline-offset: 2px; }
+.concept-btn[aria-expanded="true"] { background: #212C55; }
+@media (hover: hover) { .concept-btn:hover { background: #1E2850; } }
+.concept-name { font-size: 16px; font-weight: 600; display: block; }
+.concept-sub { display: block; color: var(--fg-muted); margin-top: 2px; }
+.concept-body { padding: 10px 12px 0; display: grid; gap: 10px; }
+.concept-body[hidden] { display: none; }
+.concept-notes { color: var(--fg-muted); line-height: 1.5; display: grid; gap: 6px; }
+.concept-notes b { color: var(--fg); font-weight: 500; }
+.swatches { display: flex; gap: 4px; }
+.swatches i { width: 18px; height: 18px; display: block; }
+.pages { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 1px; }
+.page-btn { all: unset; box-sizing: border-box; display: flex; justify-content: space-between; width: 100%; padding: 7px 10px; cursor: pointer; color: var(--fg-muted); transition: background-color 120ms ease, color 120ms ease; }
+.page-btn[aria-current="true"] { background: var(--accent); color: #fff; }
+@media (hover: hover) { .page-btn:not([aria-current="true"]):hover { background: #222D57; color: var(--fg); } }
+.stage { position: relative; overflow: auto; background: var(--canvas); padding: 28px max(16px, env(safe-area-inset-right, 0px)) 28px 28px; }
+.frame-wrap { margin: 0 auto; transform-origin: top left; }
+.frame-label { display: flex; justify-content: space-between; color: var(--fg-muted); padding-bottom: 8px; font-size: 13px; }
+.frame-box { background: #fff; overflow: hidden; box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45); }
+iframe { display: block; border: 0; background: #fff; }
+.app.full { grid-template-columns: 0 minmax(0, 1fr); }
+.app.full .side { display: none; }
+@media (max-width: 760px) {
+  .app { grid-template-columns: minmax(0, 1fr); grid-template-rows: 52px auto minmax(0, 1fr); }
+  .side { max-height: 34vh; }
+  .top-name span, .zoom { display: none; }
+  .stage { padding: 12px max(16px, env(safe-area-inset-right, 0px)) 12px max(16px, env(safe-area-inset-left, 0px)); }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<div class="app" id="app">
+  <header class="top">
+    <div class="top-name">VCS Group <span>· website concepts D, E and F</span></div>
+    <div class="devices" role="group" aria-label="Device width">
+      <button type="button" data-w="1440" aria-pressed="true">Desktop</button>
+      <button type="button" data-w="768" aria-pressed="false">Tablet</button>
+      <button type="button" data-w="390" aria-pressed="false">Phone</button>
+    </div>
+    <span class="zoom" id="zoom">100%</span>
+    <button class="toggle" type="button" id="full" aria-pressed="false">Hide panel</button>
+  </header>
+  <nav class="side" id="side" aria-label="Concepts and pages"></nav>
+  <main class="stage" id="stage">
+    <div class="frame-wrap" id="wrap">
+      <div class="frame-label"><span id="label"></span><span id="size"></span></div>
+      <div class="frame-box"><iframe id="view" title="Website concept preview"></iframe></div>
+    </div>
+  </main>
+</div>
+
+<script>
+var PAGES = [['index', 'Home'], ['ict', 'ICT'], ['automobile', 'Automobile'], ['distribution', 'Distribution'], ['tourism', 'Tourism'], ['printing', 'Printing'], ['media', 'Media'], ['investment', 'Investment'], ['about', 'About'], ['contact', 'Contact']];
+var CONCEPTS = [
+  { id: 'd-monument', name: 'D · The name as a monument', sub: 'Condensed, architectural, dark hero',
+    notes: ['<b>Idea</b> The VCS letters on every company’s paperwork become the architecture: each page’s name crosses an inset picture.', '<b>Type</b> Archivo, condensed for display', '<b>Motion</b> Picture opens like a shutter, the name settles as you scroll, sector panels open in place', '<b>Menu</b> Full-page navy menu that opens from the button in a circle, with a picture preview per sector', '<b>Live feature</b> “What do you need?” finds the right company, phone and website'],
+    sw: ['#141E3C', '#F3F5F7', '#23748E', '#E3E9EF'] },
+  { id: 'e-annual', name: 'E · The printed annual', sub: 'Editorial, like the company profile in print',
+    notes: ['<b>Idea</b> The Group’s printed company profile becomes the website: every sector is a chapter, colour comes in solid blocks.', '<b>Type</b> Bodoni Moda with Jost', '<b>Motion</b> Headline lines rise from their baselines, picture panels widen on hover, a sticky sector strip', '<b>Menu</b> A contents page that drops down like a sheet, chapter by chapter', '<b>Live feature</b> Year slider: see which companies had joined by any year since 1991'],
+    sw: ['#F4F6F8', '#1D2A51', '#23748E', '#D9DADD'] },
+  { id: 'f-statement', name: 'F · Type and nothing else', sub: 'Poster-like, bold capitals, teal accent',
+    notes: ['<b>Idea</b> The Group’s firsts (first computer company, first daily colour paper, first private radio station) told as typographic set pieces.', '<b>Type</b> Anton with Work Sans', '<b>Motion</b> Cropped giant name, stepped statement, numbers that rise, picture bands that drift', '<b>Menu</b> Full-page teal menu where each sector word rises from a mask', '<b>Live feature</b> Days at work for Seychelles, counted live, with the time in Victoria'],
+    sw: ['#F5F7F9', '#1D2A51', '#23748E', '#8FD3E4'] }
+];
+var state = { c: 0, p: 'index', w: 1440 };
+try { var saved = JSON.parse(localStorage.getItem('vcs-review') || 'null'); if (saved) state = saved; } catch (e) {}
+
+var side = document.getElementById('side'), view = document.getElementById('view'), wrap = document.getElementById('wrap'), stage = document.getElementById('stage');
+
+function save() { try { localStorage.setItem('vcs-review', JSON.stringify(state)); } catch (e) {} }
+
+function renderSide() {
+  side.innerHTML = '';
+  CONCEPTS.forEach(function (c, i) {
+    var open = i === state.c;
+    var div = document.createElement('section'); div.className = 'concept';
+    var b = document.createElement('button'); b.className = 'concept-btn'; b.type = 'button'; b.setAttribute('aria-expanded', open);
+    b.innerHTML = '<span class="concept-name"></span><span class="concept-sub"></span>';
+    b.firstChild.textContent = c.name; b.lastChild.textContent = c.sub;
+    b.addEventListener('click', function () { state.c = i; state.p = state.p || 'index'; go(); });
+    div.appendChild(b);
+    var body = document.createElement('div'); body.className = 'concept-body'; body.hidden = !open;
+    var sw = document.createElement('div'); sw.className = 'swatches'; sw.setAttribute('aria-hidden', 'true');
+    c.sw.forEach(function (h) { var x = document.createElement('i'); x.style.background = h; sw.appendChild(x); });
+    var notes = document.createElement('div'); notes.className = 'concept-notes';
+    notes.innerHTML = c.notes.map(function (n) { return '<div>' + n + '</div>'; }).join('');
+    var ul = document.createElement('ul'); ul.className = 'pages';
+    PAGES.forEach(function (p) {
+      var li = document.createElement('li'); var pb = document.createElement('button'); pb.className = 'page-btn'; pb.type = 'button';
+      pb.textContent = p[1]; if (open && state.p === p[0]) pb.setAttribute('aria-current', 'true');
+      pb.addEventListener('click', function () { state.c = i; state.p = p[0]; go(); });
+      li.appendChild(pb); ul.appendChild(li);
+    });
+    body.appendChild(sw); body.appendChild(notes); body.appendChild(ul); div.appendChild(body); side.appendChild(div);
+  });
+}
+
+function fit() {
+  var w = state.w, avail = stage.clientWidth - 56;
+  var s = Math.min(1, avail / w);
+  var h = Math.max(400, (stage.clientHeight - 90) / s);
+  view.style.width = w + 'px'; view.style.height = h + 'px';
+  wrap.style.width = w + 'px';
+  wrap.style.transform = 'scale(' + s + ')';
+  wrap.style.marginLeft = Math.max(0, (avail - w * s) / 2) + 'px';
+  wrap.style.height = (h + 30) * s + 'px';
+  document.getElementById('zoom').textContent = Math.round(s * 100) + '%';
+  document.getElementById('size').textContent = w + ' px';
+}
+
+function go() {
+  var c = CONCEPTS[state.c];
+  var src = c.id + '/' + state.p + '.html';
+  if (!view.getAttribute('src') || view.getAttribute('src') !== src) view.setAttribute('src', src);
+  var page = PAGES.filter(function (p) { return p[0] === state.p; })[0];
+  document.getElementById('label').textContent = c.name + ' — ' + (page ? page[1] : '');
+  document.querySelectorAll('.devices button').forEach(function (b) { b.setAttribute('aria-pressed', +b.dataset.w === state.w); });
+  renderSide(); fit(); save();
+}
+
+// Follow links clicked inside the frame.
+view.addEventListener('load', function () {
+  try {
+    var path = view.contentWindow.location.pathname.split('/');
+    var file = path.pop().replace('.html', ''), dir = path.pop();
+    var ci = CONCEPTS.findIndex(function (c) { return c.id === dir; });
+    if (ci > -1 && (ci !== state.c || file !== state.p)) { state.c = ci; state.p = file || 'index'; renderSide(); save();
+      var page = PAGES.filter(function (p) { return p[0] === state.p; })[0];
+      document.getElementById('label').textContent = CONCEPTS[ci].name + ' — ' + (page ? page[1] : ''); }
+  } catch (e) {}
+});
+document.querySelectorAll('.devices button').forEach(function (b) { b.addEventListener('click', function () { state.w = +b.dataset.w; go(); }); });
+document.getElementById('full').addEventListener('click', function () {
+  var app = document.getElementById('app'); var on = app.classList.toggle('full');
+  this.setAttribute('aria-pressed', on); this.textContent = on ? 'Show panel' : 'Hide panel'; fit();
+});
+window.addEventListener('resize', fit);
+go();
+</script>
