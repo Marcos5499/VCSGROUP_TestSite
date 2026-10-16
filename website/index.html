@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>VCS Group · Shaping the Seychelles of tomorrow</title>
+<meta name="description" content="The VCS Group: twelve companies across ICT, automobile, distribution, tourism, printing, media and investment in Seychelles since 1991.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css">
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ================================================================ HEADER -->
+<header class="site-header" data-header>
+  <div class="site-header__bar">
+    <a class="site-header__logo" href="index.html" aria-label="VCS Group home">
+      <img src="assets/vcs-logo-dark.png" width="559" height="125" alt="">
+    </a>
+    <nav class="primary-nav" aria-label="Main">
+      <ul>
+        <li><a href="about.html">About us</a></li>
+        <li class="has-mega">
+          <button type="button" class="primary-nav__trigger" aria-expanded="false" aria-controls="mega-businesses" data-mega-trigger>
+            Our businesses
+            <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </li>
+        <li><a href="about.html#journey">Our journey</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="site-header__actions">
+      <a class="btn btn--teal btn--small site-header__cta" href="contact.html">Get in touch</a>
+      <button type="button" class="menu-button" data-menu-open aria-expanded="false" aria-controls="site-menu">
+        <span class="menu-button__label">Menu</span>
+        <span class="menu-button__icon" aria-hidden="true"><i></i><i></i></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mega menu: every sector, its companies and a picture, one click from anywhere -->
+  <div class="mega" id="mega-businesses" data-mega hidden>
+    <div class="mega__inner">
+      <div class="mega__list" role="list">
+        <a role="listitem" class="mega__sector is-active" href="sectors/ict.html" data-mega-item="ict"><span class="mega__name">ICT</span><span class="mega__hint">Victoria Computer Services · SCloud</span></a>
+        <a role="listitem" class="mega__sector" href="sectors/automobile.html" data-mega-item="automobile"><span class="mega__name">Automobile</span><span class="mega__hint">Autoland · Honda · Executive Motors · Crown Motors</span></a>
+        <a role="listitem" class="mega__sector" href="sectors/distribution.html" data-mega-item="distribution"><span class="mega__name">Import &amp; Distribution</span><span class="mega__hint">Savy &amp; Sons</span></a>
+        <a role="listitem" class="mega__sector" href="sectors/tourism.html" data-mega-item="tourism"><span class="mega__name">Tourism</span><span class="mega__hint">SeaShell Travel · Executive Cars · Island Charters</span></a>
+        <a role="listitem" class="mega__sector" href="sectors/printing.html" data-mega-item="printing"><span class="mega__name">Printing &amp; Publishing</span><span class="mega__hint">Printhouse · iMedia</span></a>
+        <a role="listitem" class="mega__sector" href="sectors/media.html" data-mega-item="media"><span class="mega__name">Media &amp; Marketing</span><span class="mega__hint">Switch · TODAY in Seychelles · Pure 90.7 FM</span></a>
+        <a role="listitem" class="mega__sector" href="sectors/investment.html" data-mega-item="investment"><span class="mega__name">Investment</span><span class="mega__hint">Strategic shareholdings in national enterprises</span></a>
+      </div>
+      <div class="mega__preview" aria-live="polite">
+        <div class="mega__image" data-mega-image style="--img: url('../assets/img/ict.jpg')"></div>
+        <div class="mega__copy">
+          <p class="mega__title" data-mega-title>ICT</p>
+          <p class="mega__text" data-mega-text>Where the Group began in 1991: software, hardware and IT services for banks, hotels, airlines, schools and government.</p>
+          <a class="btn btn--white btn--small" href="sectors/ict.html" data-mega-link>Explore ICT <span class="btn__arrow" aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Full-page menu: opens in a circle from the Menu button -->
+<div class="site-menu" id="site-menu" data-menu hidden role="dialog" aria-modal="true" aria-label="Site menu">
+  <div class="site-menu__grid">
+    <div class="site-menu__main">
+      <p class="site-menu__label">Our businesses</p>
+      <ul class="site-menu__sectors">
+        <li style="--i:0"><a href="sectors/ict.html"><small>01</small>ICT</a></li>
+        <li style="--i:1"><a href="sectors/automobile.html"><small>02</small>Automobile</a></li>
+        <li style="--i:2"><a href="sectors/distribution.html"><small>03</small>Import &amp; Distribution</a></li>
+        <li style="--i:3"><a href="sectors/tourism.html"><small>04</small>Tourism</a></li>
+        <li style="--i:4"><a href="sectors/printing.html"><small>05</small>Printing &amp; Publishing</a></li>
+        <li style="--i:5"><a href="sectors/media.html"><small>06</small>Media &amp; Marketing</a></li>
+        <li style="--i:6"><a href="sectors/investment.html"><small>07</small>Investment</a></li>
+      </ul>
+    </div>
+    <div class="site-menu__side">
+      <button type="button" class="site-menu__close" data-menu-close aria-label="Close menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <ul class="site-menu__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="about.html#journey">Our journey</a></li>
+        <li><a href="about.html#values">Values &amp; culture</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <address class="site-menu__contact">VCS Building, Le Chantier<br>Victoria, Mahé, Seychelles<br><a href="tel:+2484676000">+248 4676 000</a> · <a href="mailto:info@vcs.sc">info@vcs.sc</a></address>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+
+<!-- ================================================================ HERO -->
+<section class="hero" aria-label="Introduction">
+  <div class="hero__bg" style="--img: url('../assets/img/hero.jpg')" role="img" aria-label="Network of connected points of light, from the cover of the VCS Group company profile"></div>
+  <div class="hero__shade"></div>
+  <div class="container hero__content">
+    <h1 class="hero__title reveal-lines"><span class="line"><span>Shaping the Seychelles</span></span><span class="line"><span class="accent">of tomorrow.</span></span></h1>
+    <p class="hero__lead fade-up" style="--d: 500ms">Technology, mobility, travel, media and trade: twelve companies, one group, and a foundational pillar of the nation’s growth since 1991.</p>
+    <a class="btn btn--teal fade-up" style="--d: 650ms" href="#businesses">Discover our businesses <span class="btn__circle" aria-hidden="true">→</span></a>
+  </div>
+</section>
+
+<!-- ================================================================ WHO WE ARE -->
+<section class="about" id="about" aria-labelledby="about-label">
+  <div class="container">
+    <div class="about__grid">
+      <p class="eyebrow" id="about-label" data-reveal>Who we are</p>
+      <div>
+        <p class="about__statement" data-words>What began on 2 December 1991 as Seychelles’ first computer services company has grown into one of the country’s most respected groups, <span class="hl">empowering organisations to focus on their core activities</span> through advanced technology, superior products and professional service.</p>
+        <a class="link-arrow" href="about.html" data-reveal>Read our story <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+    <dl class="stats" data-stagger>
+      <div><dt>30+</dt><dd>years of pioneering</dd></div>
+      <div><dt>~300</dt><dd>talented people</dd></div>
+      <div><dt>12</dt><dd>group companies</dd></div>
+      <div><dt>8</dt><dd>economic sectors</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- ================================================================ OUR BUSINESSES -->
+<section class="businesses" id="businesses" aria-labelledby="businesses-title">
+  <div class="businesses__intro">
+    <div class="container businesses__intro-grid">
+      <h2 class="section-title" id="businesses-title" data-reveal>Our businesses</h2>
+      <div>
+        <p class="businesses__lead" data-reveal>Seven divisions serving every corner of the Seychelles economy. Choose a sector, or scroll through them all.</p>
+        <nav class="sector-jump" aria-label="Jump to a sector" data-stagger>
+          <a href="#panel-ict">ICT</a><a href="#panel-automobile">Automobile</a><a href="#panel-distribution">Distribution</a><a href="#panel-tourism">Tourism</a><a href="#panel-printing">Printing</a><a href="#panel-media">Media</a><a href="#panel-investment">Investment</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <div class="panels">
+    <!-- ICT -->
+    <article class="panel" id="panel-ict" style="--img: url('../assets/img/ict.jpg')">
+      <div class="panel__bg"></div>
+      <div class="container panel__grid">
+        <div class="panel__main">
+          <p class="panel__meta"><span>01 / 07</span><span class="panel__rule"></span><span>Since 1991</span></p>
+          <h3 class="panel__title">ICT</h3>
+          <p class="panel__text">The flagship of the Group. Victoria Computer Services delivers enterprise infrastructure, software, SCloud backup and IT support to banks, hotels, airlines, schools, ministries and small businesses.</p>
+          <a class="btn btn--white" href="sectors/ict.html">Explore ICT <span class="btn__circle btn__circle--navy" aria-hidden="true">→</span></a>
+        </div>
+        <ul class="panel__companies">
+          <li><a href="https://www.vcs.sc" target="_blank" rel="noopener"><strong>Victoria Computer Services</strong><span>Microsoft · HP · Xerox · Cisco · Fortinet · Dell</span></a></li>
+          <li><a href="https://www.vcs.sc" target="_blank" rel="noopener"><strong>SCloud</strong><span>Backup &amp; disaster recovery</span></a></li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- Automobile -->
+    <article class="panel" id="panel-automobile" style="--img: url('../assets/img/automobile.jpg')">
+      <div class="panel__bg"></div>
+      <div class="container panel__grid">
+        <div class="panel__main">
+          <p class="panel__meta"><span>02 / 07</span><span class="panel__rule"></span><span>Seven world brands</span></p>
+          <h3 class="panel__title">Automobile</h3>
+          <p class="panel__text">Authorised sales and after-sales for Honda, BMW, Chevrolet, Isuzu, Peugeot, GWM and HAVAL, with factory-trained technicians and computer-based diagnostics.</p>
+          <a class="btn btn--white" href="sectors/automobile.html">Explore Automobile <span class="btn__circle btn__circle--navy" aria-hidden="true">→</span></a>
+        </div>
+        <ul class="panel__companies">
+          <li><a href="sectors/automobile.html#autoland"><strong>Autoland</strong><span>Service centre, garage &amp; spare parts</span></a></li>
+          <li><a href="https://www.facebook.com/hondaseychelles" target="_blank" rel="noopener"><strong>Honda (Seychelles)</strong><span>Cars, motorcycles &amp; power products</span></a></li>
+          <li><a href="https://www.facebook.com/executivemotors" target="_blank" rel="noopener"><strong>Executive Motors</strong><span>BMW · Chevrolet · Isuzu</span></a></li>
+          <li><a href="sectors/automobile.html#crown-motors"><strong>Crown Motors</strong><span>GWM · Peugeot · HAVAL</span></a></li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- Distribution -->
+    <article class="panel" id="panel-distribution" style="--img: url('../assets/img/distribution.jpg')">
+      <div class="panel__bg"></div>
+      <div class="container panel__grid">
+        <div class="panel__main">
+          <p class="panel__meta"><span>03 / 07</span><span class="panel__rule"></span><span>Roots in the 1930s</span></p>
+          <h3 class="panel__title">Import &amp; Distribution</h3>
+          <p class="panel__text">The leading wine, spirits and beverage wholesaler in Seychelles, supplying hotels, restaurants, bars and shops across Mahé, Praslin and La Digue.</p>
+          <a class="btn btn--white" href="sectors/distribution.html">Explore Distribution <span class="btn__circle btn__circle--navy" aria-hidden="true">→</span></a>
+        </div>
+        <ul class="panel__companies">
+          <li><a href="sectors/distribution.html#savy-sons"><strong>Savy &amp; Sons</strong><span>B&amp;G · Bacardi · Diageo · Laurent-Perrier · Bavaria · Bardinet</span></a></li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- Tourism -->
+    <article class="panel" id="panel-tourism" style="--img: url('../assets/img/tourism.jpg')">
+      <div class="panel__bg"></div>
+      <div class="container panel__grid">
+        <div class="panel__main">
+          <p class="panel__meta"><span>04 / 07</span><span class="panel__rule"></span><span>Land, air &amp; sea</span></p>
+          <h3 class="panel__title">Tourism</h3>
+          <p class="panel__text">IATA-accredited ticketing for every airline serving Seychelles, chauffeur-driven and self-drive BMW and Honda fleets, and sport fishing aboard the 58-foot Viking <em>Island Star</em>.</p>
+          <a class="btn btn--white" href="sectors/tourism.html">Explore Tourism <span class="btn__circle btn__circle--navy" aria-hidden="true">→</span></a>
+        </div>
+        <ul class="panel__companies">
+          <li><a href="https://www.seashelltravel.sc" target="_blank" rel="noopener"><strong>SeaShell Travel</strong><span>IATA-accredited travel agency</span></a></li>
+          <li><a href="https://www.executivecars.sc" target="_blank" rel="noopener"><strong>Executive Cars Rental</strong><span>Limousines, transfers, rentals &amp; leasing</span></a></li>
+          <li><a href="sectors/tourism.html#island-charters"><strong>Island Charters</strong><span>Sport fishing &amp; coastal cruising</span></a></li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- Printing -->
+    <article class="panel" id="panel-printing" style="--img: url('../assets/img/printing.jpg')">
+      <div class="panel__bg"></div>
+      <div class="container panel__grid">
+        <div class="panel__main">
+          <p class="panel__meta"><span>05 / 07</span><span class="panel__rule"></span><span>1,700 m² facility</span></p>
+          <h3 class="panel__title">Printing &amp; Publishing</h3>
+          <p class="panel__text">The largest privately owned printer in Seychelles, with Heidelberg offset, Xerox and Mimaki digital presses, chemical-free CTP and secure MICR cheque printing for the Central Bank.</p>
+          <a class="btn btn--white" href="sectors/printing.html">Explore Printing <span class="btn__circle btn__circle--navy" aria-hidden="true">→</span></a>
+        </div>
+        <ul class="panel__companies">
+          <li><a href="https://www.facebook.com/printhouse" target="_blank" rel="noopener"><strong>Printhouse</strong><span>Offset, digital &amp; security printing</span></a></li>
+          <li><a href="https://www.yellowpages.sc" target="_blank" rel="noopener"><strong>iMedia</strong><span>Seychelles Directory &amp; yellowpages.sc</span></a></li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- Media -->
+    <article class="panel" id="panel-media" style="--img: url('../assets/img/media.jpg')">
+      <div class="panel__bg"></div>
+      <div class="container panel__grid">
+        <div class="panel__main">
+          <p class="panel__meta"><span>06 / 07</span><span class="panel__rule"></span><span>Firsts in Seychelles</span></p>
+          <h3 class="panel__title">Media &amp; Marketing</h3>
+          <p class="panel__text">A full-service digital and brand agency, the country’s first independent daily colour newspaper, and its first commercial private radio station, broadcasting 24/7.</p>
+          <a class="btn btn--white" href="sectors/media.html">Explore Media <span class="btn__circle btn__circle--navy" aria-hidden="true">→</span></a>
+        </div>
+        <ul class="panel__companies">
+          <li><a href="sectors/media.html#switch"><strong>Switch</strong><span>Web, digital marketing &amp; branding</span></a></li>
+          <li><a href="sectors/media.html#today"><strong>TODAY in Seychelles</strong><span>eTODAY · SEALIFE · OZORDI Dimans</span></a></li>
+          <li><a href="https://purefm.sc" target="_blank" rel="noopener"><strong>Pure 90.7 FM</strong><span>Music, news &amp; sport, 24/7</span></a></li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- Investment -->
+    <article class="panel" id="panel-investment" style="--img: url('../assets/img/investment.jpg')">
+      <div class="panel__bg"></div>
+      <div class="container panel__grid">
+        <div class="panel__main">
+          <p class="panel__meta"><span>07 / 07</span><span class="panel__rule"></span><span>National cornerstones</span></p>
+          <h3 class="panel__title">Investment</h3>
+          <p class="panel__text">Strategic shareholdings in enterprises at the heart of the Seychelles economy, in insurance, banking, telecommunications, brewing, property and marine services.</p>
+          <a class="btn btn--white" href="sectors/investment.html">Explore Investment <span class="btn__circle btn__circle--navy" aria-hidden="true">→</span></a>
+        </div>
+        <ul class="panel__companies">
+          <li><a href="sectors/investment.html"><strong>H. Savy Insurance · H. Savy &amp; Co.</strong><span>Insurance &amp; trading</span></a></li>
+          <li><a href="sectors/investment.html"><strong>Seychelles Commercial Bank</strong><span>Banking</span></a></li>
+          <li><a href="sectors/investment.html"><strong>Cable &amp; Wireless · Seychelles Breweries</strong><span>Telecoms &amp; beverages</span></a></li>
+          <li><a href="sectors/investment.html"><strong>Le Chantier Development · Land Marine</strong><span>Property &amp; marine</span></a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ================================================================ VALUES -->
+<section class="values" id="values" aria-labelledby="values-title" style="--img: url('../assets/img/values.jpg')">
+  <div class="values__bg"></div>
+  <div class="container">
+    <div class="values__head">
+      <h2 class="section-title" id="values-title" data-reveal>Values that drive a high-performance culture</h2>
+      <p class="values__lead" data-reveal>Our values guide how we work with customers, partners and each other. They make the VCS Group a rewarding place to work, and a partner our customers want to stay with.</p>
+    </div>
+    <ul class="values__grid" data-stagger>
+      <li class="value"><h3>Caring</h3><p>Maintaining respectful relations with customers, partners, suppliers, employees and communities.</p></li>
+      <li class="value"><h3>Innovation</h3><p>Making changes that create differences and improvements throughout all divisions.</p></li>
+      <li class="value"><h3>Loyalty</h3><p>Working together with employees, partners, suppliers and customers to solve problems.</p></li>
+      <li class="value"><h3>Knowledge</h3><p>Being experts in our fields.</p></li>
+      <li class="value"><h3>Integrity</h3><p>Exhibiting honesty and integrity at all times.</p></li>
+      <li class="value"><h3>Commitment</h3><p>Dedicated to the success of our customers, partners, employees and shareholders.</p></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================================================================ TESTIMONIALS -->
+<section class="voices" aria-labelledby="voices-title">
+  <div class="container voices__head">
+    <h2 class="section-title" id="voices-title" data-reveal>Trusted by Seychelles</h2>
+    <div class="voices__controls">
+      <span class="voices__count" data-voices-count>1 / 5</span>
+      <button type="button" class="round-btn" data-voices-prev aria-label="Previous testimonial"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button type="button" class="round-btn" data-voices-next aria-label="Next testimonial"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    </div>
+  </div>
+  <div class="voices__stage" data-voices>
+    <button type="button" class="voices__side voices__side--prev" data-voices-prev aria-label="Show previous testimonial"></button>
+    <button type="button" class="voices__side voices__side--next" data-voices-next aria-label="Show next testimonial"></button>
+    <div class="voices__track" data-voices-track>
+      <figure class="voice is-active"><p class="voice__division">ICT</p><blockquote>[Placeholder] A quote from a banking or hotel client about VCS’s IT expertise and dependable support.</blockquote><figcaption><span class="voice__avatar">IC</span><span><strong>[Client name]</strong><br>[Title], [Organisation]</span></figcaption></figure>
+      <figure class="voice"><p class="voice__division">Automobile</p><blockquote>[Placeholder] A quote about the Autoland service experience and its factory-trained technicians.</blockquote><figcaption><span class="voice__avatar">AU</span><span><strong>[Client name]</strong><br>[Title], [Company]</span></figcaption></figure>
+      <figure class="voice"><p class="voice__division">Tourism</p><blockquote>[Placeholder] A quote from a visitor about Executive Cars or a day aboard Island Star.</blockquote><figcaption><span class="voice__avatar">TO</span><span><strong>[Client name]</strong><br>[Country]</span></figcaption></figure>
+      <figure class="voice"><p class="voice__division">Import &amp; Distribution</p><blockquote>[Placeholder] A quote from a resort partner about Savy &amp; Sons’ range and reliability.</blockquote><figcaption><span class="voice__avatar">SS</span><span><strong>[Client name]</strong><br>[Title], [Resort]</span></figcaption></figure>
+      <figure class="voice"><p class="voice__division">Printing</p><blockquote>[Placeholder] A quote about Printhouse’s quality and fast turnaround.</blockquote><figcaption><span class="voice__avatar">PH</span><span><strong>[Client name]</strong><br>[Title], [Organisation]</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ================================================================ CTA + FOOTER -->
+<footer class="site-footer" style="--img: url('../assets/img/cta.jpg')">
+  <div class="site-footer__bg"></div>
+  <div class="container">
+    <div class="cta" data-reveal>
+      <h2 class="cta__title">Let’s write the next chapter together.</h2>
+      <p class="cta__text">Partner with us, join our team, or talk to one of our twelve companies.</p>
+      <div class="cta__actions">
+        <a class="btn btn--white" href="contact.html">Contact the Group <span class="btn__circle btn__circle--navy" aria-hidden="true">→</span></a>
+        <a class="btn btn--line" href="careers.html">Careers at VCS</a>
+      </div>
+    </div>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/vcs-logo-dark.png" width="559" height="125" alt="VCS Group Seychelles">
+        <address>VCS Building, Le Chantier<br>PO Box 1000, Victoria, Mahé, Seychelles<br><a href="tel:+2484676000">+248 4676 000</a> · <a href="mailto:info@vcs.sc">info@vcs.sc</a></address>
+      </div>
+      <nav class="footer-col" aria-label="Our businesses">
+        <p class="footer-col__title">Our businesses</p>
+        <ul>
+          <li><a href="sectors/ict.html">ICT</a></li>
+          <li><a href="sectors/automobile.html">Automobile</a></li>
+          <li><a href="sectors/distribution.html">Import &amp; Distribution</a></li>
+          <li><a href="sectors/tourism.html">Tourism</a></li>
+          <li><a href="sectors/printing.html">Printing &amp; Publishing</a></li>
+          <li><a href="sectors/media.html">Media &amp; Marketing</a></li>
+          <li><a href="sectors/investment.html">Investment</a></li>
+        </ul>
+      </nav>
+      <nav class="footer-col" aria-label="The Group">
+        <p class="footer-col__title">The Group</p>
+        <ul>
+          <li><a href="about.html">About us</a></li>
+          <li><a href="about.html#journey">Our journey</a></li>
+          <li><a href="about.html#leadership">Leadership</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="footer-col">
+        <p class="footer-col__title">Direct lines</p>
+        <ul class="footer-lines">
+          <li>Autoland <a href="tel:+2484389444">+248 4389 444</a></li>
+          <li>Printhouse <a href="tel:+2484374888">+248 4374 888</a></li>
+          <li>SeaShell Travel <a href="tel:+2484324361">+248 4324 361</a></li>
+          <li>Executive Cars <a href="tel:+2482526162">+248 2526 162</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-legal"><span>© 2026 VCS Group, Seychelles</span><span>Caring · Innovation · Loyalty · Knowledge · Integrity · Commitment</span></div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
